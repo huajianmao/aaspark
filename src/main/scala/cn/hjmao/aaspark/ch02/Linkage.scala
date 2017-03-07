@@ -14,7 +14,7 @@ object Linkage {
   def main(args: Array[String]): Unit = {
     val master = args.length match {
       case x: Int if x > 0 => args(0)
-      case _ => "local"
+      case _ => "local[*]"
     }
     val conf = new SparkConf()
       .setAppName("AASpark")
@@ -27,6 +27,8 @@ object Linkage {
 
 //    small(rawblocks)
     distributed(rawblocks)
+
+    sc.stop
   }
 
   private def small(rawblocks: RDD[String]) = {
