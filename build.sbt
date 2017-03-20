@@ -12,7 +12,11 @@ libraryDependencies ++= Seq(
   "org.scalactic" %% "scalactic" % "3.0.1",
   "org.scalatest" %% "scalatest" % "3.0.1" % "test",
   "com.holdenkarau" %% "spark-testing-base" % "2.1.0_0.6.0" % "test",
-  "org.scoverage" %% "scalac-scoverage-runtime" % "1.3.0" % "test"
+  "org.scoverage" %% "scalac-scoverage-runtime" % "1.3.0" % "test",
+
+  "org.apache.hadoop" % "hadoop-client" % "2.7.3",
+  "com.esri.geometry" % "esri-geometry-api" % "1.2.1",
+  "io.spray" %% "spray-json" % "1.3.3"
 )
 
 parallelExecution in Test := false
