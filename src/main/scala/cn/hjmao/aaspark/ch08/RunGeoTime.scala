@@ -28,12 +28,14 @@ case class Trip(
 object RunGeoTime {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().master("local[*]")
-                                      .appName("GeoTime in Ch08")
+    val spark = SparkSession.builder().master("spark://cubeheader1:7077")
+                                      .appName("GeoTime")
+                                      .config("spark.executor.memory", "16g")
+                                      .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
                                       .getOrCreate()
     import spark.implicits._
 
-    val taxiRaw = spark.read.option("header", "true").csv("data/ch08/trip_data*.csv")
+    val taxiRaw = spark.read.option("header", "true").csv("hdfs://cubeheader1:9000/hjmao/data/aaspark/ch08/trip_data_1.csv")
     val taxiParsed = taxiRaw.rdd.map(safe(parse))
     val taxiGood = taxiParsed.map(_.left.get).toDS
     taxiGood.cache()

@@ -14,15 +14,15 @@ object Linkage {
   def main(args: Array[String]): Unit = {
     val master = args.length match {
       case x: Int if x > 0 => args(0)
-      case _ => "local[*]"
+      case _ => "spark://cubeheader1:7077"
     }
     val conf = new SparkConf()
       .setAppName("AASpark")
       .setMaster(master)
-      .setExecutorEnv("--driver-memory", "2g")
+      .setExecutorEnv("--driver-memory", "16g")
     val sc = new SparkContext(conf)
 
-    val dataset = "data/ch02/block_*.csv"
+    val dataset = "hdfs://cubeheader1:9000/hjmao/data/aaspark/ch02/block_*.csv"
     val rawblocks: RDD[String] = sc.textFile(dataset)
 
 //    small(rawblocks)
