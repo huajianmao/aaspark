@@ -8,7 +8,4 @@ import org.scalatest.FunSuite
  */
 class LinkageTest extends FunSuite with SharedSparkContext {
 
-  test("testIsHeader") {
-
-  }
 }
