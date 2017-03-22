@@ -38,7 +38,7 @@ object RunGeoTime {
                                       .getOrCreate()
     import spark.implicits._
 
-    val taxiRaw = spark.read.option("header", "true").csv("hdfs://cubeheader1:9000/hjmao/data/aaspark/ch08/trip_data_1.csv")
+    val taxiRaw = spark.read.option("header", "true").csv("hdfs://cubeheader1:9000/hjmao/data/aaspark/ch08/trip_data_*.csv")
     val taxiParsed = taxiRaw.rdd.map(safe(parse))
     val taxiGood = taxiParsed.map(_.left.get).toDS
     taxiGood.cache()
