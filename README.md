@@ -4,8 +4,6 @@ This project holds the examples code for the Book [Advanced Analytics with Spark
 [Sandy Ryza](https://github.com/sryza), [Uri Laserson](https://github.com/laserson), 
 [Sean Owen](https://github.com/srowen), and [Josh Wills](https://github.com/jwills).
 
-[![Advanced Analytics with Spark](http://akamaicovers.oreilly.com/images/0636920056591/lrg.jpg)](http://shop.oreilly.com/product/0636920056591.do)
-
 There is also an official source repo for this book, you may find the source code in [the author's Github](https://github.com/sryza/aas).
 
 ### Build
@@ -26,3 +24,5 @@ In order to play with the examples, you may need to fetch example data from the 
 - Chapter 10: ftp://ftp.ncbi.nih.gov/1000genomes/ftp/phase3/data/HG00103/alignment/HG00103.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam
 - Chapter 11: https://github.com/thunder-project/thunder/tree/v0.4.1/python/thunder/utils/data/fish/tif-stack
 
+
+[![Advanced Analytics with Spark](http://akamaicovers.oreilly.com/images/0636920056591/lrg.jpg)](http://shop.oreilly.com/product/0636920056591.do)
